@@ -4,6 +4,7 @@
     border: 1px black solid;
     display: flex;
     flex-direction: column;
+    background-color: #A9A9A9;
 }
 
 #display {
@@ -11,6 +12,9 @@
     margin: 10px;
     border: 1px black solid;
     font-size: 50px;
+    font-family: "Orbitron", sans-serif;
+    background-color: black;
+    color: white;
 }
 
 #functions {
@@ -19,6 +23,7 @@
     border: 1px black solid;
     display: flex;
     flex-wrap: wrap; 
+    background-color: lightgray;
 }
 
 .function {
