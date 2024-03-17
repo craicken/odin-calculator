@@ -26,19 +26,20 @@ clear.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-    const regex = /(?<=[-+*/()])|(?=[-+*/()])/;
-    const expressionArray = displayValue.split(regex);
-    console.log(expressionArray)
+    if(displayValue !== "") {
+        const regex = /(?<=[-+*/()])|(?=[-+*/()])/;
+        const expressionArray = displayValue.split(regex);
+        console.log(expressionArray)
 
-
-    for(let i = 0; i <expressionArray.length; i++) {
-            expressionArray.unshift(operate(parseInt(expressionArray[0]), expressionArray[1], parseInt(expressionArray[2])));
+        for(let i = 0; i <expressionArray.length; i++) {
+            expressionArray.unshift(operate(parseFloat(expressionArray[0]), expressionArray[1], parseFloat(expressionArray[2])));
             expressionArray.splice(1, 3);
-    }
+        }
 
-    expressionArray.toString();
-    display.textContent = expressionArray;
-    displayValue = expressionArray;
+        expressionArray.toString();
+        display.textContent = expressionArray;
+        displayValue = expressionArray;
+    }
 });
 
 
