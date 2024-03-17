@@ -1,0 +1,32 @@
+#container {
+    width: 600px;
+    height: 800px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    height: 300px;
+    margin: 10px;
+    border: 1px black solid;
+    font-size: 50px;
+}
+
+#functions {
+    margin: 10px;
+    height: 500px;
+    border: 1px black solid;
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.function {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-size: 30px;
+}
