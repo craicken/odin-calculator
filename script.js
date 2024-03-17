@@ -5,19 +5,34 @@ let displayValue = "";
 
 const display = document.querySelector("#display");
 const calcFunc = document.querySelectorAll(".function");
-
+const equals = document.querySelector("#equals");
+const clear = document.querySelector("#clear");
 
 calcFunc.forEach(func => {
     func.addEventListener("click", () => {
         const selectedButton = func.textContent;
 
-        if(selectedButton !== "equals" && selectedButton !== "clear") {
-            displayValue += `${selectedButton}`;
-            display.textContent = displayValue;
-        }
-    })
-})
+        if(selectedButton !== "=" && selectedButton !== "clear") {
+                displayValue += `${selectedButton}`;
+                display.textContent = displayValue;
+            }
+        })
+    });
 
+
+clear.addEventListener("click", () => {
+    display.textContent = "";
+    displayValue = "";
+});
+
+equals.addEventListener("click", () => {
+    num1 = parseInt(displayValue.charAt(0));
+    operator = displayValue.charAt(1);
+    num2 = parseInt(displayValue.charAt(2));
+
+    display.textContent = operate(num1, operator, num2);
+    displayValue = "";
+});
 
 
 function add (num1, num2) {
@@ -33,6 +48,9 @@ function multiply (num1, num2) {
 };
 
 function divide (num1, num2) {
+    if(num2 === 0) {
+        return "ERR";
+    }
     return num1 / num2;
 };
 
@@ -40,13 +58,13 @@ function divide (num1, num2) {
 function operate (num1, operator, num2) {
     switch(operator) {
         case "+":
-            add(num1, num2);
+            return add(num1, num2);
         case "-":
-            subtract(num1, num2);
+            return subtract(num1, num2);
         case "*":
-            multiply(num1, num2);
+            return multiply(num1, num2);
         case "/":
-            divide(num1, num2);
+            return divide(num1, num2);
     }
 };
 
