@@ -38,7 +38,7 @@ equals.addEventListener("click", () => {
 
     expressionArray.toString();
     display.textContent = expressionArray;
-    displayValue = "";
+    displayValue = expressionArray;
 });
 
 
