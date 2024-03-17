@@ -19,14 +19,14 @@ body {
     height: 100px;
     margin: 10px;
     border: 1px black solid;
-    font-size: 50px;
+    font-size: 40px;
     font-family: "Orbitron", sans-serif;
     background-color: olive;
     border-radius: 12px;
     padding: 10px;
     display: flex;
-    align-items: flex-end;
-    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 #functions {

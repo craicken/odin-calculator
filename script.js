@@ -35,8 +35,8 @@ equals.addEventListener("click", () => {
             expressionArray.unshift(operate(parseFloat(expressionArray[0]), expressionArray[1], parseFloat(expressionArray[2])));
             expressionArray.splice(1, 3);
         }
-
-        expressionArray.toString();
+        
+        Number.parseFloat(expressionArray[0]).toFixed(10).toString();
         display.textContent = expressionArray;
         displayValue = expressionArray;
     }
