@@ -13,7 +13,7 @@ calcFunc.forEach(func => {
         const selectedButton = func.textContent;
 
         if(selectedButton !== "=" && selectedButton !== "clear") {
-                displayValue += `${selectedButton}`;
+                displayValue += selectedButton;
                 display.textContent = displayValue;
             }
         })
@@ -26,11 +26,18 @@ clear.addEventListener("click", () => {
 });
 
 equals.addEventListener("click", () => {
-    num1 = parseInt(displayValue.charAt(0));
-    operator = displayValue.charAt(1);
-    num2 = parseInt(displayValue.charAt(2));
+    const regex = /(?<=[-+*/()])|(?=[-+*/()])/;
+    const expressionArray = displayValue.split(regex);
+    console.log(expressionArray)
 
-    display.textContent = operate(num1, operator, num2);
+
+    for(let i = 0; i <expressionArray.length; i++) {
+            expressionArray.unshift(operate(parseInt(expressionArray[0]), expressionArray[1], parseInt(expressionArray[2])));
+            expressionArray.splice(1, 3);
+    }
+
+    expressionArray.toString();
+    display.textContent = expressionArray;
     displayValue = "";
 });
 
